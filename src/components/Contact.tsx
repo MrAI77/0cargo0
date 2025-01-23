@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAppContext } from './AppContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Modal = ({ isOpen, message, onClose }) => {
   return (
@@ -41,6 +42,7 @@ const Modal = ({ isOpen, message, onClose }) => {
 
 const Contact = () => {
   const { calculationData } = useAppContext();
+  const { t } = useLanguage();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
@@ -89,15 +91,15 @@ const Contact = () => {
       );
 
       if (response.ok) {
-        setModalMessage("Заявка успешно отправлена!");
+        setModalMessage(t('contact.success'));
         setIsModalOpen(true);
       } else {
-        setModalMessage("Ошибка при отправке заявки.");
+        setModalMessage(t('contact.error'));
         setIsModalOpen(true);
       }
     } catch (error) {
       console.error("Ошибка:", error);
-      setModalMessage("Произошла ошибка при отправке заявки.");
+      setModalMessage(t('contact.error'));
       setIsModalOpen(true);
     }
   };
@@ -110,39 +112,39 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Заявка на товар
+          {t('contact.title')}
         </h2>
         <div className="flex justify-center">
           <form onSubmit={sendToTelegram} className="w-full max-w-md space-y-6">
             <div>
-              <label className="block text-sm font-medium mb-2">Ваше имя</label>
+              <label className="block text-sm font-medium mb-2">{t('contact.name')}</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="Введите ваше имя"
+                placeholder={t('contact.name')}
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">Номер телефона</label>
+              <label className="block text-sm font-medium mb-2">{t('contact.phone')}</label>
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="Введите ваш номер телефона"
+                placeholder={t('contact.phone')}
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">Сообщение</label>
+              <label className="block text-sm font-medium mb-2">{t('contact.message')}</label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                placeholder="Введите ваше сообщение"
+                placeholder={t('contact.message')}
                 required
               ></textarea>
             </div>
@@ -150,7 +152,7 @@ const Contact = () => {
               type="submit"
               className="w-full bg-secondary hover:bg-secondary/90 text-white font-medium py-3 rounded-lg transition-colors"
             >
-              Отправить заявку
+              {t('contact.submit')}
             </button>
           </form>
         </div>

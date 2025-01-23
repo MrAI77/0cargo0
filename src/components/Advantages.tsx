@@ -1,26 +1,29 @@
 import { Shield, Clock, DollarSign, Users } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Advantages = () => {
+  const { t } = useLanguage();
+
   const advantages = [
     {
       icon: <Shield className="w-12 h-12 text-primary" />,
-      title: "Надежность",
-      description: "Гарантируем сохранность вашего груза на всех этапах перевозки"
+      title: t('advantages.reliability'),
+      description: t('advantages.reliabilityDesc')
     },
     {
       icon: <Clock className="w-12 h-12 text-primary" />,
-      title: "Скорость",
-      description: "Оптимальные маршруты и сроки доставки для вашего груза"
+      title: t('advantages.speed'),
+      description: t('advantages.speedDesc')
     },
     {
       icon: <DollarSign className="w-12 h-12 text-primary" />,
-      title: "Выгодные цены",
-      description: "Конкурентные тарифы и индивидуальный подход к каждому клиенту"
+      title: t('advantages.prices'),
+      description: t('advantages.pricesDesc')
     },
     {
       icon: <Users className="w-12 h-12 text-primary" />,
-      title: "Опытная команда",
-      description: "Профессионалы с многолетним опытом в логистике"
+      title: t('advantages.team'),
+      description: t('advantages.teamDesc')
     }
   ];
 
@@ -28,7 +31,7 @@ const Advantages = () => {
     <section id="advantages" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Почему выбирают нас
+          {t('advantages.title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {advantages.map((advantage, index) => (

@@ -1,60 +1,63 @@
 import { Truck, Plane, Package, Clock, Building2, FileCheck, Shield, Users, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: <Truck className="w-12 h-12 text-primary" />,
-      title: "Грузоперевозки",
-      description: "Организуем доставку грузов автотранспортом по оптимальным маршрутам с полным отслеживанием. Наши опытные водители и современный автопарк гарантируют безопасность и своевременность доставки. Предоставляем услуги по консолидации грузов для оптимизации стоимости.",
+      title: t('services.cargoTransportation.title'),
+      description: t('services.cargoTransportation.description'),
       image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1200&h=800"
     },
     {
       icon: <Plane className="w-12 h-12 text-primary" />,
-      title: "Авиаперевозки",
-      description: "Быстрая доставка грузов воздушным транспортом. Идеально для срочных и ценных грузов. Работаем с ведущими авиакомпаниями, обеспечивая оптимальные тарифы и максимальную скорость. Предоставляем услуги по упаковке и оформлению документов.",
+      title: t('services.airTransportation.title'),
+      description: t('services.airTransportation.description'),
       image: "https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?auto=format&fit=crop&q=80&w=1200&h=800"
     },
     {
       icon: <Package className="w-12 h-12 text-primary" />,
-      title: "Складское хранение",
-      description: "Современные складские комплексы во всех крупных городах Китая с системой учёта и контроля температуры. Предоставляем услуги по маркировке, упаковке и консолидации грузов. Наши склады оборудованы системами видеонаблюдения и охраны.",
+      title: t('services.warehousing.title'),
+      description: t('services.warehousing.description'),
       image: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1200&h=800"
     },
     {
       icon: <Clock className="w-12 h-12 text-primary" />,
-      title: "Срочная доставка",
-      description: "Экспресс-доставка срочных грузов в кратчайшие сроки с гарантией своевременности. Индивидуальный подход к каждому заказу и отслеживание груза в реальном времени. Оперативное решение всех вопросов.",
+      title: t('services.expressDelivery.title'),
+      description: t('services.expressDelivery.description'),
       image: "https://st.depositphotos.com/1555678/4876/i/600/depositphotos_48761077-stock-photo-3d-express-delivery-concept.jpg"
     },
     {
       icon: <Building2 className="w-12 h-12 text-primary" />,
-      title: "Консолидация грузов",
-      description: "Объединяем несколько мелких партий в одну для оптимизации стоимости доставки. Профессиональная упаковка и маркировка каждой партии груза. Предоставляем услуги по временному хранению и подготовке сборных грузов к отправке.",
+      title: t('services.cargoConsolidation.title'),
+      description: t('services.cargoConsolidation.description'),
       image: "https://chinatoday.ru/wp-content/uploads/2023/09/keys180923-1-min.jpg"
     },
     {
       icon: <FileCheck className="w-12 h-12 text-primary" />,
-      title: "Таможенное оформление",
-      description: "Полное сопровождение при прохождении таможенных процедур и оформлении необходимой документации. Наши специалисты помогут подготовить все требуемые документы и обеспечат быстрое прохождение таможенного контроля.",
+      title: t('services.customsClearance.title'),
+      description: t('services.customsClearance.description'),
       image: "https://avatars.mds.yandex.net/get-altay/2068435/2a0000016f1cec0be3791c169e372f08423a/XXXL"
     },
     {
       icon: <Shield className="w-12 h-12 text-primary" />,
-      title: "Страхование грузов",
-      description: "Предоставляем полное страховое покрытие для всех типов грузов. Работаем с ведущими страховыми компаниями, обеспечивая максимальную защиту ваших интересов. Оперативное урегулирование страховых случаев.",
+      title: t('services.cargoInsurance.title'),
+      description: t('services.cargoInsurance.description'),
       image: "https://one-group.ru/upload/iblock/eae/2vw2g86tjd9eapxeykfc54953hinahqt.jpg"
     },
     {
       icon: <Users className="w-12 h-12 text-primary" />,
-      title: "Персональный менеджер",
-      description: "Выделяем персонального менеджера для сопровождения вашего груза на всех этапах перевозки. Круглосуточная поддержка и консультации по всем вопросам. Индивидуальный подход к каждому клиенту.",
+      title: t('services.personalManager.title'),
+      description: t('services.personalManager.description'),
       image: "https://www.w2you.ru/admin/imgai4/6.webp"
     },
     {
       icon: <Search className="w-12 h-12 text-primary" />,
-      title: "Отслеживание",
-      description: "С помощью современных технологий и нашей системы мониторинга вы всегда можете отслеживать движение вашего груза в реальном времени, получать уведомления о статусе доставки и оперативно реагировать на любые изменения.",
+      title: t('services.tracking.title'),
+      description: t('services.tracking.description'),
       image: "https://ukrevro.com/wp-content/uploads/2024/01/cargo-tracking.jpg"
     }
   ];
@@ -66,7 +69,7 @@ const Services = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Проверяем при загрузке
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -75,12 +78,10 @@ const Services = () => {
     <section id="services" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 animate-fade-in">
-          Наши услуги
+          {t('services.title')}
         </h2>
         <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-fade-in [animation-delay:200ms]">
-          Предоставляем полный спектр логистических услуг для вашего бизнеса. 
-          От консолидации грузов до срочной доставки - мы обеспечим оптимальное решение для любых задач.
-          Наша команда профессионалов гарантирует качественное выполнение каждого заказа.
+          {t('services.description')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
