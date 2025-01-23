@@ -1,5 +1,4 @@
 import { AppProvider } from "@/components/AppContext";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -40,41 +39,39 @@ const Index = () => {
   };
 
   return (
-    <LanguageProvider>
-      <AppProvider>
-        <SplashScreen onComplete={() => setShowSplash(false)} />
-        <motion.div 
-          className="min-h-screen overflow-x-hidden"
-          initial="hidden"
-          animate={!showSplash ? "visible" : "hidden"}
-          variants={containerVariants}
-        >
-          <Header />
-          <motion.div variants={itemVariants}>
-            <Hero />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Services />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Calculator />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <WarehouseMap />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Advantages />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Contact />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Footer />
-          </motion.div>
-          <FloatingContactButtons />
+    <AppProvider>
+      <SplashScreen onComplete={() => setShowSplash(false)} />
+      <motion.div 
+        className="min-h-screen overflow-x-hidden"
+        initial="hidden"
+        animate={!showSplash ? "visible" : "hidden"}
+        variants={containerVariants}
+      >
+        <Header />
+        <motion.div variants={itemVariants}>
+          <Hero />
         </motion.div>
-      </AppProvider>
-    </LanguageProvider>
+        <motion.div variants={itemVariants}>
+          <Services />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Calculator />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <WarehouseMap />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Advantages />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Contact />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Footer />
+        </motion.div>
+        <FloatingContactButtons />
+      </motion.div>
+    </AppProvider>
   );
 };
 
