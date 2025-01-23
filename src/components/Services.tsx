@@ -114,21 +114,6 @@ const Services = () => {
                   {service.description}
                 </p>
               </div>
-              {isMobile && (
-                <style>{`
-                  @keyframes float {
-                    0%, 100% {
-                      transform: translateY(0);
-                    }
-                    50% {
-                      transform: translateY(-10px);
-                    }
-                  }
-                  .group {
-                    animation: float 3s ease-in-out infinite;
-                  }
-                `}</style>
-              )}
             </div>
           ))}
         </div>

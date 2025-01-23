@@ -105,6 +105,18 @@ const translations: Translations = {
     ru: "Быстрая доставка грузов воздушным транспортом. Идеально для срочных отправлений",
     en: "Fast cargo delivery by air transport. Perfect for urgent shipments"
   },
+  services_consolidation_title: {
+    ru: "Консолидация грузов",
+    en: "Cargo Consolidation"
+  },
+  services_tracking_title: {
+    ru: "Отслеживание грузов",
+    en: "Cargo Tracking"
+  },
+  services_tracking_description: {
+    ru: "Современная система отслеживания позволяет контролировать местоположение груза в реальном времени",
+    en: "Modern tracking system allows you to monitor cargo location in real-time"
+  },
   // Calculator
   calculator_title: {
     ru: "Калькулятор стоимости доставки",
