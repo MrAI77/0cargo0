@@ -37,19 +37,19 @@ const Header = () => {
             <a href="#contact" className="hover:text-primary transition-colors">{t('nav_contact')}</a>
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="p-2 focus:outline-none">
+              <DropdownMenuTrigger className="p-2">
                 <Globe className="w-6 h-6" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
+              <DropdownMenuContent>
                 <DropdownMenuItem 
                   onClick={() => setLanguage('ru')}
-                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                  className="cursor-pointer"
                 >
                   Русский
                 </DropdownMenuItem>
                 <DropdownMenuItem 
                   onClick={() => setLanguage('en')}
-                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                  className="cursor-pointer"
                 >
                   English
                 </DropdownMenuItem>
@@ -96,19 +96,19 @@ const Header = () => {
               {t('nav_contact')}
             </a>
             <DropdownMenu>
-              <DropdownMenuTrigger className="p-2 focus:outline-none">
+              <DropdownMenuTrigger className="p-2">
                 <Globe className="w-6 h-6" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem 
                   onClick={() => setLanguage('ru')}
-                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                  className="cursor-pointer"
                 >
                   Русский
                 </DropdownMenuItem>
                 <DropdownMenuItem 
                   onClick={() => setLanguage('en')}
-                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                  className="cursor-pointer"
                 >
                   English
                 </DropdownMenuItem>

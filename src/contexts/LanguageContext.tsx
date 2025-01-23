@@ -58,6 +58,46 @@ const translations: Translations = {
     ru: "Калькулятор стоимости доставки",
     en: "Delivery Cost Calculator",
   },
+  calculator_weight: {
+    ru: "Вес груза (кг):",
+    en: "Cargo weight (kg):",
+  },
+  calculator_volume: {
+    ru: "Объем груза (м³):",
+    en: "Cargo volume (m³):",
+  },
+  calculator_length: {
+    ru: "Длина груза (м):",
+    en: "Cargo length (m):",
+  },
+  calculator_width: {
+    ru: "Ширина груза (м):",
+    en: "Cargo width (m):",
+  },
+  calculator_height: {
+    ru: "Высота груза (м):",
+    en: "Cargo height (m):",
+  },
+  calculator_truck: {
+    ru: "Грузовик",
+    en: "Truck",
+  },
+  calculator_plane: {
+    ru: "Самолет",
+    en: "Plane",
+  },
+  calculator_small_cargo: {
+    ru: "Малый груз",
+    en: "Small cargo",
+  },
+  calculator_large_cargo: {
+    ru: "Большой груз",
+    en: "Large cargo",
+  },
+  calculator_calculate: {
+    ru: "Рассчитать стоимость",
+    en: "Calculate cost",
+  },
   // Map
   map_title: {
     ru: "Наши склады в Китае",
@@ -72,47 +112,72 @@ const translations: Translations = {
     ru: "Почему выбирают нас",
     en: "Why Choose Us",
   },
+  advantages_reliability: {
+    ru: "Надежность",
+    en: "Reliability",
+  },
+  advantages_speed: {
+    ru: "Скорость",
+    en: "Speed",
+  },
+  advantages_prices: {
+    ru: "Выгодные цены",
+    en: "Competitive prices",
+  },
+  advantages_team: {
+    ru: "Опытная команда",
+    en: "Experienced team",
+  },
   // Contact
   contact_title: {
     ru: "Заявка на товар",
     en: "Product Request",
   },
-  contact_form_name: {
+  contact_name: {
     ru: "Ваше имя",
     en: "Your Name",
   },
-  contact_form_phone: {
+  contact_phone: {
     ru: "Номер телефона",
     en: "Phone Number",
   },
-  contact_form_message: {
+  contact_message: {
     ru: "Сообщение",
     en: "Message",
   },
-  contact_form_submit: {
+  contact_submit: {
     ru: "Отправить заявку",
     en: "Submit Request",
   },
   // Footer
-  footer_about_title: {
+  footer_about: {
     ru: "О компании",
     en: "About Company",
   },
-  footer_contacts_title: {
+  footer_contacts: {
     ru: "Контакты",
     en: "Contacts",
   },
-  footer_warehouses_title: {
+  footer_warehouses: {
     ru: "Наши склады",
     en: "Our Warehouses",
   },
-  footer_social_title: {
+  footer_social: {
     ru: "Мы в соцсетях",
     en: "Social Media",
   },
   footer_rights: {
     ru: "Все права защищены",
     en: "All rights reserved",
+  },
+  // System messages
+  success_message: {
+    ru: "Заявка успешно отправлена!",
+    en: "Request successfully sent!",
+  },
+  error_message: {
+    ru: "Произошла ошибка при отправке заявки.",
+    en: "An error occurred while sending the request.",
   },
 };
 
