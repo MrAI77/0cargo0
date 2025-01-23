@@ -4,7 +4,7 @@ import { translations, Language, TranslationKeys } from '../i18n/translations';
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => string | string[];
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -20,7 +20,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.lang = language;
   }, [language]);
 
-  const t = (path: string): string => {
+  const t = (path: string): string | string[] => {
     const keys = path.split('.');
     let current: any = translations[language];
     

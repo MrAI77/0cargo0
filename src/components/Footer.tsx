@@ -4,8 +4,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Footer = () => {
   const { t } = useLanguage();
 
-  // Cast the locations to string[] since we know it's an array in translations
-  const warehouseLocations = t('footer.warehouses.locations') as string[];
+  const warehouseLocations = t('footer.warehouses.locations');
+  if (!Array.isArray(warehouseLocations)) {
+    console.error('Warehouse locations is not an array');
+    return null;
+  }
 
   return (
     <footer className="bg-gray-900 text-white py-12">
