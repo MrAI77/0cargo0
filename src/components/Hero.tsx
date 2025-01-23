@@ -28,7 +28,7 @@ const Hero = () => {
           {/* Левая часть (текст и кнопки) */}
           <div className="flex-1 space-y-6 animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold">
-              Грузо-Авиа перевозки из Китая
+              Грузовые и авиаперевозки из Китая
               <span className="text-primary block animate-slide-in-right">в любую точку мира</span>
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
