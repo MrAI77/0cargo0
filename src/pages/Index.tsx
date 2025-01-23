@@ -11,9 +11,11 @@ import FloatingContactButtons from "@/components/FloatingContactButtons";
 import SplashScreen from "@/components/SplashScreen";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const { t } = useLanguage();
 
   const containerVariants = {
     hidden: { opacity: 0 },
