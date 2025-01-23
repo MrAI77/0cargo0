@@ -4,6 +4,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Footer = () => {
   const { t } = useLanguage();
 
+  // Cast the locations to string[] since we know it's an array in translations
+  const warehouseLocations = t('footer.warehouses.locations') as string[];
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -37,7 +40,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">{t('footer.warehouses.title')}</h4>
             <ul className="space-y-2 text-gray-400">
-              {t('footer.warehouses.locations').map((location, index) => (
+              {warehouseLocations.map((location, index) => (
                 <li key={index}>{location}</li>
               ))}
             </ul>
