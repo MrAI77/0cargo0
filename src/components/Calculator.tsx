@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Truck, Plane, Weight, Ruler, Box } from 'lucide-react';
 import { useAppContext } from './AppContext';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Calculator = () => {
+  const { t } = useLanguage();
   const [weight, setWeight] = useState("");
   const [length, setLength] = useState("");
   const [width, setWidth] = useState("");
@@ -153,7 +155,7 @@ const Calculator = () => {
     <section id="calculator" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Калькулятор стоимости доставки
+          {t('calculator_title')}
         </h2>
         <div className="max-w-4xl mx-auto">
           <div className="flex gap-4 mb-8 justify-center">
@@ -166,7 +168,7 @@ const Calculator = () => {
               }`}
             >
               <Truck className="w-5 h-5" />
-              Грузовик
+              {t('calculator_truck')}
             </button>
             <button
               onClick={() => setTransportType('plane')}
@@ -177,7 +179,7 @@ const Calculator = () => {
               }`}
             >
               <Plane className="w-5 h-5" />
-              Самолет
+              {t('calculator_plane')}
             </button>
           </div>
 
@@ -192,7 +194,7 @@ const Calculator = () => {
                 }`}
               >
                 <Box className="w-5 h-5" />
-                Малый груз
+                {t('calculator_small_cargo')}
               </button>
               <button
                 onClick={() => setCargoType('large')}
@@ -203,7 +205,7 @@ const Calculator = () => {
                 }`}
               >
                 <Truck className="w-5 h-5" />
-                Большой груз
+                {t('calculator_large_cargo')}
               </button>
             </div>
           )}
@@ -213,7 +215,7 @@ const Calculator = () => {
               {transportType === 'truck' && cargoType === 'small' ? (
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Вес груза (кг):
+                    {t('calculator_weight')}
                   </label>
                   <div className="flex items-center gap-2">
                     <Weight className="w-5 h-5 text-gray-500" />
@@ -227,13 +229,12 @@ const Calculator = () => {
                       max="10000"
                     />
                   </div>
-                  <p className="text-sm text-gray-500 mt-1">Введите вес груза в килограммах.</p>
                 </div>
               ) : transportType === 'truck' && cargoType === 'large' ? (
                 <>
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Объем груза (м³):
+                      {t('calculator_volume')}
                     </label>
                     <div className="flex items-center gap-2">
                       <Truck className="w-5 h-5 text-gray-500" />
@@ -247,12 +248,11 @@ const Calculator = () => {
                         max="1000"
                       />
                     </div>
-                    <p className="text-sm text-gray-500 mt-1">Введите объем груза в кубических метрах.</p>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Вес груза (кг):
+                      {t('calculator_weight')}
                     </label>
                     <div className="flex items-center gap-2">
                       <Weight className="w-5 h-5 text-gray-500" />
@@ -266,14 +266,13 @@ const Calculator = () => {
                         max="10000"
                       />
                     </div>
-                    <p className="text-sm text-gray-500 mt-1">Введите вес груза в килограммах.</p>
                   </div>
                 </>
               ) : (
                 <>
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Длина груза (м):
+                      {t('calculator_length')}
                     </label>
                     <div className="flex items-center gap-2">
                       <Ruler className="w-5 h-5 text-gray-500" />
@@ -291,7 +290,7 @@ const Calculator = () => {
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Ширина груза (м):
+                      {t('calculator_width')}
                     </label>
                     <div className="flex items-center gap-2">
                       <Ruler className="w-5 h-5 text-gray-500" />
@@ -309,7 +308,7 @@ const Calculator = () => {
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Высота груза (м):
+                      {t('calculator_height')}
                     </label>
                     <div className="flex items-center gap-2">
                       <Ruler className="w-5 h-5 text-gray-500" />
@@ -327,7 +326,7 @@ const Calculator = () => {
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Вес груза (кг):
+                      {t('calculator_weight')}
                     </label>
                     <div className="flex items-center gap-2">
                       <Weight className="w-5 h-5 text-gray-500" />
@@ -342,27 +341,6 @@ const Calculator = () => {
                       />
                     </div>
                   </div>
-
-                  <div>
-                    <p className="text-sm font-medium mb-2">
-                      Периметр груза: {calculatePerimeter().toFixed(2)} м
-                    </p>
-                    <p className="text-sm text-gray-500 mt-1">Периметр рассчитывается автоматически на основе длины и ширины груза.</p>
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-medium mb-2">
-                      Площадь груза: {calculateArea().toFixed(2)} м²
-                    </p>
-                    <p className="text-sm text-gray-500 mt-1">Площадь рассчитывается автоматически на основе длины и ширины груза.</p>
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-medium mb-2">
-                      Объем груза: {calculateVolume().toFixed(2)} м³
-                    </p>
-                    <p className="text-sm text-gray-500 mt-1">Объем рассчитывается автоматически на основе длины, ширины и высоты груза.</p>
-                  </div>
                 </>
               )}
 
@@ -375,10 +353,9 @@ const Calculator = () => {
                     : 'bg-gray-300 cursor-not-allowed'
                 } text-white py-3 rounded-lg transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95`}
               >
-                Рассчитать стоимость
+                {t('calculator_calculate')}
               </button>
 
-              {/* Отображение результата */}
               {result && (
                 <div className="mt-4 p-4 bg-gray-50 rounded-lg text-center">
                   <p className="text-lg font-semibold">{result}</p>
