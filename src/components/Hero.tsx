@@ -37,19 +37,19 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
                 <h3 className="font-semibold text-xl mb-3 text-primary">{t('calculator_plane')}</h3>
-                <p className="text-gray-600">Быстрая доставка за 3-5 дней с полным отслеживанием груза</p>
+                <p className="text-gray-600">{t('hero_plane_description')}</p>
               </div>
               <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
                 <h3 className="font-semibold text-xl mb-3 text-secondary">{t('calculator_truck')}</h3>
-                <p className="text-gray-600">Экономичная доставка за 15-20 дней с оптимальными маршрутами</p>
+                <p className="text-gray-600">{t('hero_truck_description')}</p>
               </div>
             </div>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li className="animate-fade-in [animation-delay:200ms]">Персональный менеджер 24/7</li>
-              <li className="animate-fade-in [animation-delay:400ms]">Оформление всех необходимых документов</li>
-              <li className="animate-fade-in [animation-delay:600ms]">Таможенное оформление под ключ</li>
-              <li className="animate-fade-in [animation-delay:800ms]">Страхование грузов</li>
-              <li className="animate-fade-in [animation-delay:1000ms]">Складское хранение в любом городе Китая</li>
+              <li className="animate-fade-in [animation-delay:200ms]">{t('hero_feature_1')}</li>
+              <li className="animate-fade-in [animation-delay:400ms]">{t('hero_feature_2')}</li>
+              <li className="animate-fade-in [animation-delay:600ms]">{t('hero_feature_3')}</li>
+              <li className="animate-fade-in [animation-delay:800ms]">{t('hero_feature_4')}</li>
+              <li className="animate-fade-in [animation-delay:1000ms]">{t('hero_feature_5')}</li>
             </ul>
             <div className="flex gap-4">
               <a
@@ -81,13 +81,13 @@ const Hero = () => {
             )}
             <img
               src="https://www.rsholod.ru/images/stroitelstvo-logisticheskih-tsentrov-rsholod-1.jpg"
-              alt="Логистический центр"
+              alt={t('hero_image_1_alt')}
               className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full border-4 border-white shadow-lg animate-float [animation-delay:500ms] object-cover"
               loading="eager"
             />
             <img
               src="https://www.scat-tv.ru/wp-content/uploads/2023/11/dc0780fda408b1013cef24828b7be5e1694b4509.jpg"
-              alt="Морской порт"
+              alt={t('hero_image_2_alt')}
               className="absolute -top-10 -right-10 w-32 h-32 rounded-full border-4 border-white shadow-lg animate-float [animation-delay:1000ms] object-cover"
               loading="eager"
             />
