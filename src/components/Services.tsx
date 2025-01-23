@@ -5,11 +5,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Services = () => {
   const { t } = useLanguage();
 
+  const getTranslatedText = (key: string, fallback: string): string => {
+    const translation = t(key);
+    return typeof translation === 'string' ? translation : fallback;
+  };
+
   const services = [
     {
       icon: <Truck className="w-12 h-12 text-primary" />,
-      title: t('services.cargoTransportation.title'),
-      description: t('services.cargoTransportation.description'),
+      title: getTranslatedText('services.cargoTransportation.title', 'Cargo Transportation'),
+      description: getTranslatedText('services.cargoTransportation.description', 'Cargo transportation services'),
       image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1200&h=800"
     },
     {
@@ -78,10 +83,10 @@ const Services = () => {
     <section id="services" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 animate-fade-in">
-          {t('services.title')}
+          {getTranslatedText('services.title', 'Our Services')}
         </h2>
         <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-fade-in [animation-delay:200ms]">
-          {t('services.description')}
+          {getTranslatedText('services.description', 'Our services description')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (

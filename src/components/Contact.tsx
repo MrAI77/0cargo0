@@ -91,15 +91,18 @@ const Contact = () => {
       );
 
       if (response.ok) {
-        setModalMessage(t('contact.success'));
+        const successMsg = t('contact.success');
+        setModalMessage(typeof successMsg === 'string' ? successMsg : 'Message sent successfully');
         setIsModalOpen(true);
       } else {
-        setModalMessage(t('contact.error'));
+        const errorMsg = t('contact.error');
+        setModalMessage(typeof errorMsg === 'string' ? errorMsg : 'Error sending message');
         setIsModalOpen(true);
       }
     } catch (error) {
       console.error("Ошибка:", error);
-      setModalMessage(t('contact.error'));
+      const errorMsg = t('contact.error');
+      setModalMessage(typeof errorMsg === 'string' ? errorMsg : 'Error sending message');
       setIsModalOpen(true);
     }
   };
@@ -108,43 +111,55 @@ const Contact = () => {
     setIsModalOpen(false);
   };
 
+  const titleText = t('contact.title');
+  const nameText = t('contact.name');
+  const phoneText = t('contact.phone');
+  const messageText = t('contact.message');
+  const submitText = t('contact.submit');
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          {t('contact.title')}
+          {typeof titleText === 'string' ? titleText : 'Contact Us'}
         </h2>
         <div className="flex justify-center">
           <form onSubmit={sendToTelegram} className="w-full max-w-md space-y-6">
             <div>
-              <label className="block text-sm font-medium mb-2">{t('contact.name')}</label>
+              <label className="block text-sm font-medium mb-2">
+                {typeof nameText === 'string' ? nameText : 'Name'}
+              </label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder={t('contact.name')}
+                placeholder={typeof nameText === 'string' ? nameText : 'Name'}
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">{t('contact.phone')}</label>
+              <label className="block text-sm font-medium mb-2">
+                {typeof phoneText === 'string' ? phoneText : 'Phone'}
+              </label>
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder={t('contact.phone')}
+                placeholder={typeof phoneText === 'string' ? phoneText : 'Phone'}
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">{t('contact.message')}</label>
+              <label className="block text-sm font-medium mb-2">
+                {typeof messageText === 'string' ? messageText : 'Message'}
+              </label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                placeholder={t('contact.message')}
+                placeholder={typeof messageText === 'string' ? messageText : 'Message'}
                 required
               ></textarea>
             </div>
@@ -152,7 +167,7 @@ const Contact = () => {
               type="submit"
               className="w-full bg-secondary hover:bg-secondary/90 text-white font-medium py-3 rounded-lg transition-colors"
             >
-              {t('contact.submit')}
+              {typeof submitText === 'string' ? submitText : 'Submit'}
             </button>
           </form>
         </div>
