@@ -1,17 +1,10 @@
 import { useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t, language, setLanguage } = useLanguage();
 
+  // Функция для закрытия мобильного меню при клике на ссылку
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -22,6 +15,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <div className="text-2xl font-bold text-primary">CARGO</div>
           
+          {/* Кнопка мобильного меню */}
           <button 
             className="md:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -29,35 +23,17 @@ const Header = () => {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#hero" className="hover:text-primary transition-colors">{t('nav_home')}</a>
-            <a href="#services" className="hover:text-primary transition-colors">{t('nav_services')}</a>
-            <a href="#map" className="hover:text-primary transition-colors">{t('nav_warehouses')}</a>
-            <a href="#advantages" className="hover:text-primary transition-colors">{t('nav_advantages')}</a>
-            <a href="#contact" className="hover:text-primary transition-colors">{t('nav_contact')}</a>
-            
-            <DropdownMenu>
-              <DropdownMenuTrigger className="p-2">
-                <Globe className="w-6 h-6" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem 
-                  onClick={() => setLanguage('ru')}
-                  className="cursor-pointer"
-                >
-                  Русский
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  onClick={() => setLanguage('en')}
-                  className="cursor-pointer"
-                >
-                  English
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+          {/* Десктопное меню */}
+          <nav className="hidden md:flex gap-8">
+            <a href="#hero" className="hover:text-primary transition-colors">Главное</a>
+            <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
+            <a href="#map" className="hover:text-primary transition-colors">Склады</a>
+            <a href="#advantages" className="hover:text-primary transition-colors">Преимущества</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Заявка</a>
           </nav>
         </div>
 
+        {/* Мобильное меню */}
         {isOpen && (
           <nav className="md:hidden py-4 space-y-4">
             <a 
@@ -65,55 +41,36 @@ const Header = () => {
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              {t('nav_home')}
+              Главное
             </a>
             <a 
               href="#services" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              {t('nav_services')}
+              Услуги
             </a>
             <a 
               href="#map" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              {t('nav_warehouses')}
+              Склады
             </a>
             <a 
               href="#advantages" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              {t('nav_advantages')}
+              Преимущества
             </a>
             <a 
               href="#contact" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              {t('nav_contact')}
+              Заявка
             </a>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="p-2">
-                <Globe className="w-6 h-6" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem 
-                  onClick={() => setLanguage('ru')}
-                  className="cursor-pointer"
-                >
-                  Русский
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  onClick={() => setLanguage('en')}
-                  className="cursor-pointer"
-                >
-                  English
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </nav>
         )}
       </div>

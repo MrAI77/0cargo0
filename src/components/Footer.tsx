@@ -1,51 +1,52 @@
 import { FaTelegramPlane, FaInstagram } from 'react-icons/fa';
-import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
-  const { t } = useLanguage();
-  
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* О компании */}
           <div>
             <h3 className="text-2xl font-bold mb-4">CARGO</h3>
             <p className="text-gray-400 mb-4">
-              {t('footer_about_description_1')}
+              Профессиональные грузоперевозки из Китая с собственными складами в крупнейших городах.
             </p>
             <p className="text-gray-400">
-              {t('footer_about_description_2')}
+              Мы предоставляем полный спектр логистических услуг, включая доставку, таможенное оформление и складирование.
             </p>
           </div>
 
+          {/* Контакты */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer_contacts_title')}</h4>
+            <h4 className="font-semibold mb-4">Контакты</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>{t('footer_phone')}: +86 123 456 7890</li>
-              <li>{t('footer_email')}: info@cargo-china.com</li>
+              <li>Телефон: +86 123 456 7890</li>
+              <li>Email: info@cargo-china.com</li>
               <li>
-                {t('footer_address')}:
+                Адрес: Гуанчжоу, Китай
                 <br />
-                {t('footer_address_details')}
+                Международный логистический центр
               </li>
             </ul>
           </div>
 
+          {/* Наши склады */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer_warehouses_title')}</h4>
+            <h4 className="font-semibold mb-4">Наши склады</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>{t('footer_warehouse_guangzhou')}</li>
-              <li>{t('footer_warehouse_shenzhen')}</li>
-              <li>{t('footer_warehouse_shanghai')}</li>
-              <li>{t('footer_warehouse_beijing')}</li>
-              <li>{t('footer_warehouse_yiwu')}</li>
-              <li>{t('footer_warehouse_xiamen')}</li>
-              <li>{t('footer_warehouse_khorgos')}</li>
+              <li>Гуанчжоу</li>
+              <li>Шэньчжэнь</li>
+              <li>Шанхай</li>
+              <li>Пекин</li>
+              <li>Иу</li>
+              <li>Сямынь</li>
+              <li>Хоргос</li>
             </ul>
           </div>
 
+          {/* Социальные сети */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer_social_title')}</h4>
+            <h4 className="font-semibold mb-4">Мы в соцсетях</h4>
             <div className="flex space-x-4">
               <a
                 href="https://t.me/cargo_china"
@@ -65,13 +66,14 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-gray-400 mt-4">
-              {t('footer_social_description')}
+              Подписывайтесь на наши социальные сети, чтобы быть в курсе последних новостей и акций.
             </p>
           </div>
         </div>
 
+        {/* Копирайт */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 CARGO. {t('footer_rights')}</p>
+          <p>&copy; 2024 CARGO. Все права защищены.</p>
         </div>
       </div>
     </footer>

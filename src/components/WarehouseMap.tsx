@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useLanguage } from '../contexts/LanguageContext';
 
 // Импортируем иконки вручную
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -19,7 +18,7 @@ const defaultIcon = L.icon({
   shadowSize: [41, 41],
 });
 
-L.Marker.prototype.options.icon = defaultIcon;
+L.Marker.prototype.options.icon = defaultIcon; // Устанавливаем иконку по умолчанию для всех маркеров
 
 interface Warehouse {
   city: string;
@@ -48,7 +47,6 @@ const warehouses: Warehouse[] = [
 const WarehouseMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<L.Map | null>(null);
-  const { t } = useLanguage();
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -68,7 +66,7 @@ const WarehouseMap = () => {
         marker.bindPopup(`
           <div class="p-2">
             <h3 class="font-bold text-lg">${city}</h3>
-            <p class="text-sm text-gray-600">${t('map_warehouse_description')}</p>
+            <p class="text-sm text-gray-600">Современный склад</p>
           </div>
         `);
       });
@@ -83,16 +81,17 @@ const WarehouseMap = () => {
     return () => {
       map.current?.remove();
     };
-  }, [t]);
+  }, []);
 
   return (
     <section id="map" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-          {t('map_title')}
+          Наши склады в Китае
         </h2>
         <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-          {t('map_description')}
+          Мы располагаем современными складскими комплексами во всех ключевых городах Китая, 
+          что позволяет нам обеспечивать быструю обработку и отправку грузов по любому направлению.
         </p>
         <div className="relative w-full h-[600px] rounded-lg overflow-hidden shadow-xl">
           <div ref={mapContainer} className="absolute inset-0" />
