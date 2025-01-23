@@ -63,6 +63,10 @@ const translations: Translations = {
     ru: "Наши склады в Китае",
     en: "Our Warehouses in China",
   },
+  map_description: {
+    ru: "Мы располагаем современными складскими комплексами во всех ключевых городах Китая, что позволяет нам обеспечивать быструю обработку и отправку грузов по любому направлению.",
+    en: "We have modern warehouse complexes in all key cities of China, allowing us to provide fast processing and shipping of cargo in any direction.",
+  },
   // Advantages
   advantages_title: {
     ru: "Почему выбирают нас",
@@ -72,6 +76,22 @@ const translations: Translations = {
   contact_title: {
     ru: "Заявка на товар",
     en: "Product Request",
+  },
+  contact_form_name: {
+    ru: "Ваше имя",
+    en: "Your Name",
+  },
+  contact_form_phone: {
+    ru: "Номер телефона",
+    en: "Phone Number",
+  },
+  contact_form_message: {
+    ru: "Сообщение",
+    en: "Message",
+  },
+  contact_form_submit: {
+    ru: "Отправить заявку",
+    en: "Submit Request",
   },
   // Footer
   footer_about_title: {

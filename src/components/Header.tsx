@@ -37,14 +37,20 @@ const Header = () => {
             <a href="#contact" className="hover:text-primary transition-colors">{t('nav_contact')}</a>
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="p-2">
+              <DropdownMenuTrigger className="p-2 focus:outline-none">
                 <Globe className="w-6 h-6" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => setLanguage('ru')}>
+              <DropdownMenuContent className="bg-white">
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('ru')}
+                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                >
                   Русский
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('en')}
+                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                >
                   English
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -90,14 +96,20 @@ const Header = () => {
               {t('nav_contact')}
             </a>
             <DropdownMenu>
-              <DropdownMenuTrigger className="p-2">
+              <DropdownMenuTrigger className="p-2 focus:outline-none">
                 <Globe className="w-6 h-6" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => setLanguage('ru')}>
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('ru')}
+                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                >
                   Русский
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('en')}
+                  className="cursor-pointer focus:bg-transparent hover:bg-transparent"
+                >
                   English
                 </DropdownMenuItem>
               </DropdownMenuContent>
