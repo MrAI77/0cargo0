@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
-  // Функция для закрытия мобильного меню при клике на ссылку
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -15,7 +17,6 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <div className="text-2xl font-bold text-primary">CARGO</div>
           
-          {/* Кнопка мобильного меню */}
           <button 
             className="md:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -23,17 +24,16 @@ const Header = () => {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Десктопное меню */}
-          <nav className="hidden md:flex gap-8">
-            <a href="#hero" className="hover:text-primary transition-colors">Главное</a>
-            <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
-            <a href="#map" className="hover:text-primary transition-colors">Склады</a>
-            <a href="#advantages" className="hover:text-primary transition-colors">Преимущества</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Заявка</a>
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#hero" className="hover:text-primary transition-colors">{t('nav.home')}</a>
+            <a href="#services" className="hover:text-primary transition-colors">{t('nav.services')}</a>
+            <a href="#map" className="hover:text-primary transition-colors">{t('nav.warehouses')}</a>
+            <a href="#advantages" className="hover:text-primary transition-colors">{t('nav.benefits')}</a>
+            <a href="#contact" className="hover:text-primary transition-colors">{t('nav.application')}</a>
+            <LanguageSwitcher />
           </nav>
         </div>
 
-        {/* Мобильное меню */}
         {isOpen && (
           <nav className="md:hidden py-4 space-y-4">
             <a 
@@ -41,36 +41,39 @@ const Header = () => {
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              Главное
+              {t('nav.home')}
             </a>
             <a 
               href="#services" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              Услуги
+              {t('nav.services')}
             </a>
             <a 
               href="#map" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              Склады
+              {t('nav.warehouses')}
             </a>
             <a 
               href="#advantages" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              Преимущества
+              {t('nav.benefits')}
             </a>
             <a 
               href="#contact" 
               onClick={handleLinkClick} 
               className="block hover:text-primary transition-colors"
             >
-              Заявка
+              {t('nav.application')}
             </a>
+            <div className="pt-2">
+              <LanguageSwitcher />
+            </div>
           </nav>
         )}
       </div>
