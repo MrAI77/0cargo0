@@ -29,7 +29,7 @@ export const translations = {
     },
     services: {
       title: "Our Services",
-      description: "We offer a wide range of logistics services to meet your needs",
+      description: "We offer a comprehensive range of logistics services to meet all your cargo transportation needs from China",
       cargoTransportation: {
         title: "Cargo Transportation",
         description: "We organize cargo delivery by road transport along optimal routes with full tracking. Our experienced drivers and modern fleet guarantee safety and timely delivery. We provide cargo consolidation services to optimize costs."
@@ -106,9 +106,44 @@ export const translations = {
     },
     warehouses: {
       title: "Our Warehouses in China",
-      description: "We have modern warehouse facilities in all major cities of China",
-      list: "List of our warehouses",
-      modern: "Modern warehouse"
+      description: "Network of modern warehouse facilities in all major Chinese cities for efficient cargo handling and consolidation"
+    },
+    contact: {
+      title: "Contact Us",
+      name: "Your Name",
+      phone: "Phone Number",
+      message: "Your Message",
+      submit: "Send Request",
+      success: "Message sent successfully",
+      error: "Error sending message"
+    },
+    footer: {
+      about: {
+        title: "About Company",
+        description: "International cargo transportation from China",
+        fullDescription: "We provide comprehensive logistics solutions for businesses of all sizes"
+      },
+      contacts: {
+        title: "Contacts",
+        phone: "Phone",
+        addressLine1: "Main Office:",
+        addressLine2: "Shanghai, China"
+      },
+      warehouses: {
+        title: "Our Warehouses",
+        locations: [
+          "Guangzhou Warehouse",
+          "Shenzhen Warehouse",
+          "Shanghai Warehouse",
+          "Beijing Warehouse",
+          "Yiwu Warehouse"
+        ]
+      },
+      social: {
+        title: "Social Media",
+        description: "Follow us on social media for updates"
+      },
+      copyright: "© 2024 Cargo China. All rights reserved."
     }
   },
   ru: {
@@ -141,7 +176,7 @@ export const translations = {
     },
     services: {
       title: "Наши услуги",
-      description: "У нас есть современные складские комплексы во всех крупных городах Китая",
+      description: "Мы предлагаем полный спектр логистических услуг для всех ваших потребностей в грузоперевозках из Китая",
       cargoTransportation: {
         title: "Грузоперевозки",
         description: "Организуем доставку грузов автотранспортом по оптимальным маршрутам с полным отслеживанием. Наши опытные водители и современный автопарк гарантируют безопасность и своевременность доставки. Предоставляем услуги по консолидации грузов для оптимизации стоимости."
@@ -218,9 +253,44 @@ export const translations = {
     },
     warehouses: {
       title: "Наши склады в Китае",
-      description: "У нас есть современные складские комплексы во всех крупных городах Китая",
-      list: "Список наших складов",
-      modern: "Современный склад"
+      description: "Сеть современных складских комплексов во всех крупных городах Китая для эффективной обработки и консолидации грузов"
+    },
+    contact: {
+      title: "Связаться с нами",
+      name: "Ваше имя",
+      phone: "Номер телефона",
+      message: "Ваше сообщение",
+      submit: "Отправить заявку",
+      success: "Сообщение успешно отправлено",
+      error: "Ошибка при отправке сообщения"
+    },
+    footer: {
+      about: {
+        title: "О компании",
+        description: "Международные грузоперевозки из Китая",
+        fullDescription: "Мы предоставляем комплексные логистические решения для бизнеса любого масштаба"
+      },
+      contacts: {
+        title: "Контакты",
+        phone: "Телефон",
+        addressLine1: "Главный офис:",
+        addressLine2: "Шанхай, Китай"
+      },
+      warehouses: {
+        title: "Наши склады",
+        locations: [
+          "Склад в Гуанчжоу",
+          "Склад в Шэньчжэне",
+          "Склад в Шанхае",
+          "Склад в Пекине",
+          "Склад в Иу"
+        ]
+      },
+      social: {
+        title: "Социальные сети",
+        description: "Следите за нами в социальных сетях"
+      },
+      copyright: "© 2024 Cargo China. Все права защищены."
     }
   }
 };
