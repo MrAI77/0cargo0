@@ -16,7 +16,6 @@ const Calculator = () => {
   const [result, setResult] = useState<string | null>(null);
   const { setCalculationData } = useAppContext();
 
-  // Проверка заполненности полей
   useEffect(() => {
     if (transportType === 'plane') {
       if (weight && length && width && height) {
@@ -77,10 +76,8 @@ const Calculator = () => {
 
   const calculateCost = () => {
     if (!isFormValid) {
-      const errorMessage = typeof t('calculator.error') === 'string' 
-        ? t('calculator.error') 
-        : 'Please fill in all fields';
-      setResult(errorMessage);
+      const errorMessage = t('calculator.error');
+      setResult(typeof errorMessage === 'string' ? errorMessage : 'Please fill in all fields');
       return;
     }
 
@@ -104,10 +101,8 @@ const Calculator = () => {
         cost,
         transportType: 'plane',
       });
-      const resultMessage = typeof t('calculator.result') === 'string'
-        ? `${t('calculator.result')}: $${cost}`
-        : `Примерная стоимость доставки: $${cost}`;
-      setResult(resultMessage);
+      const resultMessage = t('calculator.result');
+      setResult(typeof resultMessage === 'string' ? `${resultMessage}: $${cost}` : `Примерная стоимость доставки: $${cost}`);
     } else if (transportType === 'truck') {
       if (cargoType === 'small') {
         const cost = weightKg * 5.5;
@@ -123,10 +118,8 @@ const Calculator = () => {
           transportType: 'truck',
           cargoType: 'small',
         });
-        const resultMessage = typeof t('calculator.result') === 'string'
-          ? `${t('calculator.result')}: $${cost.toFixed(2)}`
-          : `Примерная стоимость доставки: $${cost.toFixed(2)}`;
-        setResult(resultMessage);
+        const resultMessage = t('calculator.result');
+        setResult(typeof resultMessage === 'string' ? `${resultMessage}: $${cost.toFixed(2)}` : `Примерная стоимость доставки: $${cost.toFixed(2)}`);
       } else if (cargoType === 'large') {
         const vol = parseFloat(volume) || 0;
         if (vol <= 0 || weightKg <= 0) {
@@ -146,10 +139,8 @@ const Calculator = () => {
           transportType: 'truck',
           cargoType: 'large',
         });
-        const resultMessage = typeof t('calculator.result') === 'string'
-          ? `${t('calculator.result')}: $${cost}`
-          : `Примерная стоимость доставки: $${cost}`;
-        setResult(resultMessage);
+        const resultMessage = t('calculator.result');
+        setResult(typeof resultMessage === 'string' ? `${resultMessage}: $${cost}` : `Примерная стоимость доставки: $${cost}`);
       }
     }
   };
