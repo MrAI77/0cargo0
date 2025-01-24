@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Импортируем иконки вручную
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -47,6 +48,7 @@ const warehouses: Warehouse[] = [
 const WarehouseMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<L.Map | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -87,11 +89,10 @@ const WarehouseMap = () => {
     <section id="map" className="py-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-          Наши склады в Китае
+          {t('warehouses.title')}
         </h2>
         <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-          Мы располагаем современными складскими комплексами во всех ключевых городах Китая, 
-          что позволяет нам обеспечивать быструю обработку и отправку грузов по любому направлению.
+          {t('warehouses.description')}
         </p>
         <div className="relative w-full h-[600px] rounded-lg overflow-hidden shadow-xl">
           <div ref={mapContainer} className="absolute inset-0" />

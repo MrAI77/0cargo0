@@ -122,8 +122,8 @@ export const translations = {
         addressLine2: "International Logistics Center"
       },
       warehouses: {
-        title: "Our Warehouses",
-        locations: ["Guangzhou", "Shenzhen", "Shanghai", "Beijing", "Yiwu", "Xiamen", "Khorgos"]
+        title: "Our Warehouses in China",
+        description: "We have modern warehouse complexes in all key cities of China, allowing us to provide fast processing and shipping of cargo in any direction."
       },
       social: {
         title: "Follow Us",
@@ -255,8 +255,8 @@ export const translations = {
         addressLine2: "Международный логистический центр"
       },
       warehouses: {
-        title: "Наши склады",
-        locations: ["Гуанчжоу", "Шэньчжэнь", "Шанхай", "Пекин", "Иу", "Сямынь", "Хоргос"]
+        title: "Наши склады в Китае",
+        description: "Мы располагаем современными складскими комплексами во всех ключевых городах Китая, что позволяет нам обеспечивать быструю обработку и отправку грузов по любому направлению."
       },
       social: {
         title: "Мы в соцсетях",
