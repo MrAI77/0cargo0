@@ -29,6 +29,7 @@ export const translations = {
     },
     services: {
       title: "Our Services",
+      description: "We offer a wide range of logistics services to meet your needs",
       cargoTransportation: {
         title: "Cargo Transportation",
         description: "We organize cargo delivery by road transport along optimal routes with full tracking. Our experienced drivers and modern fleet guarantee safety and timely delivery. We provide cargo consolidation services to optimize costs."
@@ -79,16 +80,21 @@ export const translations = {
     },
     calculator: {
       title: "Delivery Cost Calculator",
+      description: "Calculate the cost of delivery based on your cargo parameters",
       weight: "Cargo Weight (kg)",
+      weightHelp: "Enter the weight of your cargo in kilograms",
       length: "Length (m)",
       width: "Width (m)",
       height: "Height (m)",
       volume: "Volume (m³)",
+      volumeHelp: "Enter the volume of your cargo in cubic meters",
       perimeter: "Perimeter",
+      perimeterHelp: "The perimeter of your cargo",
       area: "Area",
+      areaHelp: "The area of your cargo",
       calculate: "Calculate Cost",
       result: "Approximate delivery cost",
-      error: "Please fill in all fields",
+      error: "Please fill in all required fields",
       transportTypes: {
         truck: "Truck",
         plane: "Plane"
@@ -98,38 +104,11 @@ export const translations = {
         large: "Large Cargo"
       }
     },
-    contact: {
-      title: "Application Form",
-      name: "Your Name",
-      phone: "Phone Number",
-      message: "Message",
-      submit: "Send Application",
-      success: "Application successfully sent!",
-      error: "Error sending application."
-    },
-    footer: {
-      about: {
-        title: "CARGO",
-        description: "Professional cargo delivery from China with own warehouses in major Chinese cities.",
-        fullDescription: "We provide a full range of logistics services: delivery, customs clearance and warehouse storage."
-      },
-      contacts: {
-        title: "Contacts",
-        phone: "Phone",
-        email: "Email",
-        address: "Address",
-        addressLine1: "Guangzhou, China",
-        addressLine2: "International Logistics Center"
-      },
-      warehouses: {
-        title: "Our Warehouses in China",
-        description: "We have modern warehouse complexes in all key cities of China, allowing us to provide fast processing and shipping of cargo in any direction."
-      },
-      social: {
-        title: "Follow Us",
-        description: "Follow our social media to stay updated with latest news and promotions."
-      },
-      copyright: "© 2024 CARGO. All rights reserved."
+    warehouses: {
+      title: "Our Warehouses in China",
+      description: "We have modern warehouse facilities in all major cities of China",
+      list: "List of our warehouses",
+      modern: "Modern warehouse"
     }
   },
   ru: {
@@ -162,6 +141,7 @@ export const translations = {
     },
     services: {
       title: "Наши услуги",
+      description: "У нас есть современные складские комплексы во всех крупных городах Китая",
       cargoTransportation: {
         title: "Грузоперевозки",
         description: "Организуем доставку грузов автотранспортом по оптимальным маршрутам с полным отслеживанием. Наши опытные водители и современный автопарк гарантируют безопасность и своевременность доставки. Предоставляем услуги по консолидации грузов для оптимизации стоимости."
@@ -212,16 +192,21 @@ export const translations = {
     },
     calculator: {
       title: "Калькулятор стоимости доставки",
+      description: "Рассчитайте стоимость доставки на основе параметров вашего груза",
       weight: "Вес груза (кг)",
+      weightHelp: "Введите вес вашего груза в килограммах",
       length: "Длина (м)",
       width: "Ширина (м)",
       height: "Высота (м)",
       volume: "Объем (м³)",
+      volumeHelp: "Введите объем вашего груза в кубических метрах",
       perimeter: "Периметр",
+      perimeterHelp: "Периметр вашего груза",
       area: "Площадь",
+      areaHelp: "Площадь вашего груза",
       calculate: "Рассчитать стоимость",
       result: "Примерная стоимость доставки",
-      error: "Пожалуйста, заполните все поля",
+      error: "Пожалуйста, заполните все обязательные поля",
       transportTypes: {
         truck: "Грузовик",
         plane: "Самолет"
@@ -231,38 +216,11 @@ export const translations = {
         large: "Большой груз"
       }
     },
-    contact: {
-      title: "Форма заявки",
-      name: "Ваше имя",
-      phone: "Номер телефона",
-      message: "Сообщение",
-      submit: "Отправить заявку",
-      success: "Заявка успешно отправлена!",
-      error: "Ошибка при отправке заявки."
-    },
-    footer: {
-      about: {
-        title: "CARGO",
-        description: "Профессиональные грузоперевозки из Китая с собственными складами в крупнейших городах КНР.",
-        fullDescription: "Мы предоставляем полный спектр логистических услуг: доставку, таможенное оформление и складское хранение."
-      },
-      contacts: {
-        title: "Контакты",
-        phone: "Телефон",
-        email: "Email",
-        address: "Адрес",
-        addressLine1: "Гуанчжоу, Китай",
-        addressLine2: "Международный логистический центр"
-      },
-      warehouses: {
-        title: "Наши склады в Китае",
-        description: "Мы располагаем современными складскими комплексами во всех ключевых городах Китая, что позволяет нам обеспечивать быструю обработку и отправку грузов по любому направлению."
-      },
-      social: {
-        title: "Мы в соцсетях",
-        description: "Подписывайтесь на наши социальные сети, чтобы быть в курсе последних новостей и акций."
-      },
-      copyright: "© 2024 CARGO. Все права защищены."
+    warehouses: {
+      title: "Наши склады в Китае",
+      description: "У нас есть современные складские комплексы во всех крупных городах Китая",
+      list: "Список наших складов",
+      modern: "Современный склад"
     }
   }
 };
