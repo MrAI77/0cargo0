@@ -17,12 +17,15 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <div className="text-2xl font-bold text-primary">CARGO</div>
           
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            <LanguageSwitcher />
+            <button 
+              className="p-2"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
 
           <nav className="hidden md:flex items-center gap-8">
             <a href="#hero" className="hover:text-primary transition-colors">{t('nav.home')}</a>
@@ -39,41 +42,38 @@ const Header = () => {
             <a 
               href="#hero" 
               onClick={handleLinkClick} 
-              className="block hover:text-primary transition-colors"
+              className="block text-primary"
             >
               {t('nav.home')}
             </a>
             <a 
               href="#services" 
               onClick={handleLinkClick} 
-              className="block hover:text-primary transition-colors"
+              className="block text-primary"
             >
               {t('nav.services')}
             </a>
             <a 
               href="#map" 
               onClick={handleLinkClick} 
-              className="block hover:text-primary transition-colors"
+              className="block text-primary"
             >
               {t('nav.warehouses')}
             </a>
             <a 
               href="#advantages" 
               onClick={handleLinkClick} 
-              className="block hover:text-primary transition-colors"
+              className="block text-primary"
             >
               {t('nav.benefits')}
             </a>
             <a 
               href="#contact" 
               onClick={handleLinkClick} 
-              className="block hover:text-primary transition-colors"
+              className="block text-primary"
             >
               {t('nav.application')}
             </a>
-            <div className="pt-2">
-              <LanguageSwitcher />
-            </div>
           </nav>
         )}
       </div>
