@@ -18,7 +18,7 @@ const LanguageSwitcher = () => {
         <Button 
           variant="ghost" 
           size="icon"
-          className="bg-transparent hover:bg-transparent"
+          className="bg-transparent hover:bg-transparent hover:text-foreground"
         >
           <Globe className="h-5 w-5" />
         </Button>
@@ -26,13 +26,13 @@ const LanguageSwitcher = () => {
       <DropdownMenuContent align="end" className="bg-white">
         <DropdownMenuItem 
           onClick={() => setLanguage('ru')}
-          className={`${language === 'ru' ? 'bg-accent/10' : ''} cursor-pointer`}
+          className={`${language === 'ru' ? 'bg-accent/10' : ''} cursor-pointer hover:bg-transparent`}
         >
           Русский
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => setLanguage('en')}
-          className={`${language === 'en' ? 'bg-accent/10' : ''} cursor-pointer`}
+          className={`${language === 'en' ? 'bg-accent/10' : ''} cursor-pointer hover:bg-transparent`}
         >
           English
         </DropdownMenuItem>
