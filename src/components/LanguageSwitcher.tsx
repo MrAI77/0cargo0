@@ -26,13 +26,13 @@ const LanguageSwitcher = () => {
       <DropdownMenuContent align="end" className="bg-white">
         <DropdownMenuItem 
           onClick={() => setLanguage('ru')}
-          className={`${language === 'ru' ? 'bg-accent/10' : ''} cursor-pointer !hover:bg-white !focus:bg-white !active:bg-white`}
+          className={`${language === 'ru' ? 'bg-accent/10' : ''} cursor-pointer hover:bg-transparent focus:bg-transparent active:bg-transparent`}
         >
           Русский
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => setLanguage('en')}
-          className={`${language === 'en' ? 'bg-accent/10' : ''} cursor-pointer !hover:bg-white !focus:bg-white !active:bg-white`}
+          className={`${language === 'en' ? 'bg-accent/10' : ''} cursor-pointer hover:bg-transparent focus:bg-transparent active:bg-transparent`}
         >
           English
         </DropdownMenuItem>
