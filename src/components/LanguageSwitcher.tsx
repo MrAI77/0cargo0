@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 import { Button } from "@/components/ui/button";
 
 const LanguageSwitcher = () => {
@@ -15,8 +15,8 @@ const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           size="icon"
           className="bg-transparent hover:bg-transparent hover:text-foreground"
         >
@@ -24,17 +24,20 @@ const LanguageSwitcher = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-white">
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => setLanguage('ru')}
-          className={`${language === 'ru' ? 'bg-accent/10' : ''} cursor-pointer hover:bg-transparent focus:bg-transparent active:bg-transparent`}
         >
           Русский
         </DropdownMenuItem>
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => setLanguage('en')}
-          className={`${language === 'en' ? 'bg-accent/10' : ''} cursor-pointer hover:bg-transparent focus:bg-transparent active:bg-transparent`}
         >
           English
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setLanguage('uz')}
+        >
+          O'zbekcha
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

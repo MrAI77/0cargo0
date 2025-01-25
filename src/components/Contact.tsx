@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAppContext } from './AppContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 
 const Modal = ({ isOpen, message, onClose }) => {
   return (

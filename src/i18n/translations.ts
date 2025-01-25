@@ -292,8 +292,155 @@ export const translations = {
       },
       copyright: "© 2024 Cargo China. Все права защищены."
     }
+  },
+  uz: {
+    nav: {
+      home: "Bosh sahifa",
+      services: "Xizmatlar",
+      warehouses: "Omborxonalar",
+      benefits: "Afzalliklar",
+      application: "Ariza"
+    },
+    hero: {
+      title: "Xitoydan Yuk va Aviyoʻlak Yetkazish",
+      subtitle: "dunyoning istalgan nuqtasiga",
+      description: "Biz Xitoyning barcha yirik shaharlarida oʻz omborxonalar tarmogʻi bilan kompleks logistik yechimlarni taklif etamiz. Kompaniyamiz har qanday hajmdagi yuklarni ishonchli va tez yetkazishni taʼminlaydi, samaradorlikni maksimal darajada oshirish uchun optimal marshrutlar va havo-yer transportini birlashtiramiz.",
+      airDelivery: "Aviyoʻlak Yetkazish",
+      airDeliveryDesc: "3-5 kun ichida toʻliq kuzatuv bilan tez yetkazish",
+      cargoDelivery: "Yuk Yetkazish",
+      cargoDeliveryDesc: "Optimal marshrutlar bilan 15-20 kun ichida iqtisodiy yetkazish",
+      features: {
+        support: "24/7 Shaxsiy Menejer",
+        documents: "Barcha zarur hujjatlarni rasmiylashtirish",
+        customs: "Turnkey bojxona rasmiylashtirish",
+        insurance: "Yukni sugʻurtalash",
+        storage: "Xitoyning istalgan shahrida omborxona saqlash"
+      },
+      buttons: {
+        calculate: "Narxni Hisoblash",
+        warehouses: "Bizning Omborxonalarimiz"
+      }
+    },
+    services: {
+      title: "Bizning Xizmatlar",
+      description: "Xitoydan yuk tashishning barcha ehtiyojlaringizni qondirish uchun kompleks logistik xizmatlarni taklif etamiz",
+      cargoTransportation: {
+        title: "Yuk Tashish",
+        description: "Yuklarni toʻliq kuzatuv bilan optimal marshrutlar boʻyicha avtotransport orqali yetkazishni tashkil qilamiz. Tajribali haydovchilarimiz va zamonaviy avtoparkimiz xavfsizlik va vaqtida yetkazishni kafolatlaydi. Xarajatlarni optimallashtirish uchun yuklarni birlashtirish xizmatlarini taqdim etamiz."
+      },
+      airTransportation: {
+        title: "Aviyoʻlak Tashish",
+        description: "Havo transporti orqali yuklarni tez yetkazish. Shoshilinch va qimmat yuklar uchun ideal. Etakchi aviakompaniyalar bilan hamkorlik qilamiz, optimal tariflar va maksimal tezlikni taʼminlaymiz. Qadoqlash va hujjatlarni rasmiylashtirish xizmatlarini koʻrsatamiz."
+      },
+      warehousing: {
+        title: "Omborxona Saqlash",
+        description: "Xitoyning barcha yirik shaharlarida zamonaviy omborxona majmualari hisob-kitob va haroratni nazorat qilish tizimlari bilan. Yuklarni belgilash, qadoqlash va birlashtirish xizmatlarini taqdim etamiz. Omborxonalarimiz video kuzatuv va xavfsizlik tizimlari bilan jihozlangan."
+      },
+      expressDelivery: {
+        title: "Tezkor Yetkazish",
+        description: "Vaqtinchalik kafolat bilan eng qisqa muddatda shoshilinch yuklarni etkazib berish. Har bir buyurtmaga individual yondashuv va real vaqt rejimida yukni kuzatish. Barcha masalalarni tezkor hal qilish."
+      },
+      cargoConsolidation: {
+        title: "Yuklarni Birlashtirish",
+        description: "Yetkazish xarajatlarini optimallashtirish uchun bir nechta kichik partiyalarni bittaga birlashtiramiz. Yukning har bir partiyasini professional qadoqlash va belgilash. Vaqtinchalik saqlash va yigʻma yuklarni joʻnatishga tayyorlash xizmatlarini koʻrsatamiz."
+      },
+      customsClearance: {
+        title: "Bojxona Rasmiylashtirish",
+        description: "Bojxona protseduralarini oʻtkazish va zarur hujjatlarni tayyorlashda toʻliq yordam. Mutaxassislarimiz barcha zarur hujjatlarni tayyorlashga yordam beradi va bojxona nazoratidan tez oʻtishni taʼminlaydi."
+      },
+      cargoInsurance: {
+        title: "Yukni Sugʻurtalash",
+        description: "Barcha turdagi yuklar uchun toʻliq sugʻurta qoplamini taqdim etamiz. Etakchi sugʻurta kompaniyalari bilan ishlaymiz, sizning manfaatlaringizni maksimal himoya qilamiz. Sugʻurta hodisalarini tezkor hal qilish."
+      },
+      personalManager: {
+        title: "Shaxsiy Menejer",
+        description: "Yukingizni tashishning barcha bosqichlarida hamrohlik qilish uchun shaxsiy menejer tayinlaymiz. 24/7 qoʻllab-quvvatlash va barcha savollarga konsultatsiyalar. Har bir mijozga individual yondashuv."
+      },
+      tracking: {
+        title: "Kuzatish",
+        description: "Zamonaviy texnologiyalar va bizning monitoring tizimimiz yordamida siz har doim yukingiz harakatini real vaqt rejimida kuzatishingiz, yetkazish holati toʻgʻrisida bildirishnomalar olishingiz va har qanday oʻzgarishlarga tezda javob berishingiz mumkin."
+      }
+    },
+    advantages: {
+      title: "Nega Bizni Tanlashadi",
+      reliability: "Ishonchlilik",
+      reliabilityDesc: "Yukingizning tashishning barcha bosqichlarida xavfsizligini kafolatlaymiz",
+      speed: "Tezlik",
+      speedDesc: "Yukingiz uchun optimal marshrutlar va yetkazish muddatlari",
+      prices: "Raqobatbardosh Narxlar",
+      pricesDesc: "Raqobatbardosh tariflar va har bir mijozga individual yondashuv",
+      team: "Tajribali Jamoa",
+      teamDesc: "Logistika sohasida koʻp yillik tajribaga ega mutaxassislar"
+    },
+    calculator: {
+      title: "Yetkazish Narxini Hisoblash",
+      description: "Yukingiz parametrlari asosida yetkazish narxini hisoblang",
+      weight: "Yuk Ogʻirligi (kg)",
+      weightHelp: "Yukingiz ogʻirligini kilogrammda kiriting",
+      length: "Uzunlik (m)",
+      width: "Kenglik (m)",
+      height: "Balandlik (m)",
+      volume: "Hajm (m³)",
+      volumeHelp: "Yukingiz hajmini kub metrda kiriting",
+      perimeter: "Perimetr",
+      perimeterHelp: "Yukingizning perimetri",
+      area: "Maydon",
+      areaHelp: "Yukingizning maydoni",
+      calculate: "Narxni Hisoblash",
+      result: "Yetkazishning taxminiy narxi",
+      error: "Iltimos, barcha majburiy maydonlarni toʻldiring",
+      transportTypes: {
+        truck: "Yuk Mashinasi",
+        plane: "Samolyot"
+      },
+      cargoTypes: {
+        small: "Kichik Yuk",
+        large: "Katta Yuk"
+      }
+    },
+    warehouses: {
+      title: "Xitoydagi Omborxonalarimiz",
+      description: "Yuklarni samarali qayta ishlash va birlashtirish uchun Xitoyning barcha yirik shaharlarida zamonaviy omborxona inshootlari tarmogʻi"
+    },
+    contact: {
+      title: "Biz bilan Bogʻlanish",
+      name: "Ismingiz",
+      phone: "Telefon Raqamingiz",
+      message: "Xabaringiz",
+      submit: "Soʻrov Yuborish",
+      success: "Xabar muvaffaqiyatli yuborildi",
+      error: "Xabar yuborishda xatolik"
+    },
+    footer: {
+      about: {
+        title: "Kompaniya Haqida",
+        description: "Xitoydan xalqaro yuk tashish",
+        fullDescription: "Biz har qanday oʻlchamdagi bizneslar uchun kompleks logistik yechimlarni taqdim etamiz"
+      },
+      contacts: {
+        title: "Kontaktlar",
+        phone: "Telefon",
+        addressLine1: "Asosiy Ofis:",
+        addressLine2: "Shanxay, Xitoy"
+      },
+      warehouses: {
+        title: "Bizning Omborxonalar",
+        locations: [
+          "Guangzhou Omborxonasi",
+          "Shenzhen Omborxonasi",
+          "Shanxay Omborxonasi",
+          "Pekin Omborxonasi",
+          "Yiwu Omborxonasi"
+        ]
+      },
+      social: {
+        title: "Ijtimoiy Tarmoqlar",
+        description: "Yangiliklar uchun ijtimoiy tarmoqlarda kuzatib boring"
+      },
+      copyright: "© 2024 Cargo China. Barcha huquqlar himoyalangan."
+    }
   }
-};
+} as const;
 
 export type Language = keyof typeof translations;
 export type TranslationKeys = typeof translations.en;

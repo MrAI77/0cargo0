@@ -1,15 +1,45 @@
 import { Truck, Plane, Package, Clock, Building2, FileCheck, Shield, Users, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
+
+// Тип для ключей переводов
+type TranslationKey = 
+  | 'services.title'
+  | 'services.description'
+  | 'services.cargoTransportation.title'
+  | 'services.cargoTransportation.description'
+  | 'services.airTransportation.title'
+  | 'services.airTransportation.description'
+  | 'services.warehousing.title'
+  | 'services.warehousing.description'
+  | 'services.expressDelivery.title'
+  | 'services.expressDelivery.description'
+  | 'services.cargoConsolidation.title'
+  | 'services.cargoConsolidation.description'
+  | 'services.customsClearance.title'
+  | 'services.customsClearance.description'
+  | 'services.cargoInsurance.title'
+  | 'services.cargoInsurance.description'
+  | 'services.personalManager.title'
+  | 'services.personalManager.description'
+  | 'services.tracking.title'
+  | 'services.tracking.description';
 
 const Services = () => {
   const { t } = useLanguage();
 
-  const getTranslatedText = (key: string, fallback: string): string => {
-    const translation = t(key);
-    return typeof translation === 'string' ? translation : fallback;
+  // Функция для безопасного получения перевода
+  const getTranslatedText = (key: TranslationKey, fallback: string): string => {
+    try {
+      const translation = t(key);
+      return typeof translation === 'string' ? translation : fallback;
+    } catch (error) {
+      console.warn(`Translation error for key ${key}:`, error);
+      return fallback;
+    }
   };
 
+  // Данные сервисов с переводами
   const services = [
     {
       icon: <Truck className="w-12 h-12 text-primary" />,
@@ -67,8 +97,10 @@ const Services = () => {
     }
   ];
 
+  // Состояние для адаптивного дизайна
   const [isMobile, setIsMobile] = useState(false);
 
+  // Эффект для отслеживания изменения размера экрана
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);

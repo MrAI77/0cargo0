@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 
 const Hero = () => {
   const videoRef = useRef(null);

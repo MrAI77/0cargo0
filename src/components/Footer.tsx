@@ -1,14 +1,36 @@
 import { FaTelegramPlane, FaInstagram } from 'react-icons/fa';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
+
+// Тип для ключей переводов
+type TranslationKey = 
+  | 'footer.about.title'
+  | 'footer.about.description'
+  | 'footer.about.fullDescription'
+  | 'footer.contacts.title'
+  | 'footer.contacts.phone'
+  | 'footer.contacts.addressLine1'
+  | 'footer.contacts.addressLine2'
+  | 'footer.warehouses.title'
+  | 'footer.warehouses.locations'
+  | 'footer.warehouses.locations.0'
+  | 'footer.warehouses.locations.1'
+  | 'footer.warehouses.locations.2'
+  | 'footer.warehouses.locations.3'
+  | 'footer.warehouses.locations.4'
+  | 'footer.social.title'
+  | 'footer.social.description'
+  | 'footer.copyright';
 
 const Footer = () => {
   const { t } = useLanguage();
-
-  const warehouseLocations = t('footer.warehouses.locations');
-  if (!Array.isArray(warehouseLocations)) {
-    console.error('Warehouse locations is not an array');
-    return null;
-  }
+  // Получаем массив локаций
+  const warehouseLocations = [
+    t('footer.warehouses.locations.0' as const),
+    t('footer.warehouses.locations.1' as const), 
+    t('footer.warehouses.locations.2' as const),
+    t('footer.warehouses.locations.3' as const),
+    t('footer.warehouses.locations.4' as const)
+  ];
 
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -16,32 +38,32 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* О компании */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">{t('footer.about.title')}</h3>
+            <h3 className="text-2xl font-bold mb-4">{t('footer.about.title' as const)}</h3>
             <p className="text-gray-400 mb-4">
-              {t('footer.about.description')}
+              {t('footer.about.description' as const)}
             </p>
             <p className="text-gray-400">
-              {t('footer.about.fullDescription')}
+              {t('footer.about.fullDescription' as const)}
             </p>
           </div>
 
           {/* Контакты */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer.contacts.title')}</h4>
+            <h4 className="font-semibold mb-4">{t('footer.contacts.title' as const)}</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>{t('footer.contacts.phone')}: +86 123 456 7890</li>
+              <li>{t('footer.contacts.phone' as const)}: +86 123 456 7890</li>
               <li>Email: info@cargo-china.com</li>
               <li>
-                {t('footer.contacts.addressLine1')}
+                {t('footer.contacts.addressLine1' as const)}
                 <br />
-                {t('footer.contacts.addressLine2')}
+                {t('footer.contacts.addressLine2' as const)}
               </li>
             </ul>
           </div>
 
           {/* Наши склады */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer.warehouses.title')}</h4>
+            <h4 className="font-semibold mb-4">{t('footer.warehouses.title' as const)}</h4>
             <ul className="space-y-2 text-gray-400">
               {warehouseLocations.map((location, index) => (
                 <li key={index}>{location}</li>
@@ -51,7 +73,7 @@ const Footer = () => {
 
           {/* Социальные сети */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer.social.title')}</h4>
+            <h4 className="font-semibold mb-4">{t('footer.social.title' as const)}</h4>
             <div className="flex space-x-4">
               <a
                 href="https://t.me/cargo_china"
@@ -71,14 +93,14 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-gray-400 mt-4">
-              {t('footer.social.description')}
+              {t('footer.social.description' as const)}
             </p>
           </div>
         </div>
 
         {/* Копирайт */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>{t('footer.copyright')}</p>
+          <p>{t('footer.copyright' as const)}</p>
         </div>
       </div>
     </footer>

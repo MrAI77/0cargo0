@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Truck, Plane, Weight, Ruler, Box } from 'lucide-react';
 import { useAppContext } from './AppContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 
 const Calculator = () => {
   const { t } = useLanguage();

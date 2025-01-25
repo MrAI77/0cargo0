@@ -1,5 +1,5 @@
 import { Shield, Clock, DollarSign, Users } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 
 const Advantages = () => {
   const { t } = useLanguage();

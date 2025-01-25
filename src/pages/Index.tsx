@@ -11,7 +11,7 @@ import FloatingContactButtons from "@/components/FloatingContactButtons";
 import SplashScreen from "@/components/SplashScreen";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext.hooks';
 
 // Импортируем иконки вручную
 import markerIcon from 'leaflet/dist/images/marker-icon.png';

@@ -12,6 +12,11 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      }
     },
     plugins: {
       "react-hooks": reactHooks,
@@ -21,9 +26,14 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
-        { allowConstantExport: true },
+        { 
+          allowConstantExport: true,
+          allowContextExport: true // Добавляем разрешение для контекста
+        }
       ],
       "@typescript-eslint/no-unused-vars": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
     },
   }
 );
